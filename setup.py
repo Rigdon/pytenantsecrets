@@ -1,19 +1,17 @@
 from setuptools import setup
 
 setup(
-    name='{{ package_name }}',
-    version='{{ package_version }}',
-    packages=('{{ package_dir_name }}',),
-    url='https://github.com/{{ github_user }}/{{ repo_name }}',
+    name='tenantsecrets',
+    version='0.0.1',
+    packages=('tenantsecrets',),
+    url='https://github.com/Rigdon/pytenantsecrets',
     license='MIT',
-    author='{{ author_name }}',
-    author_email='{{ author_email }}',
-    install_requires=(
-        {{ install_requires|pytuple }}),
-    tests_require=(
-        {{ tests_require|pytuple }}),
+    author='Ryan Rigdon',
+    author_email='mr.rigdon@gmail.com',
+    install_requires=(),
+    tests_require=(),
     description=(
-        {{ short_description|pystring }}),
+        'Tenant-Aware Secret Management and Access for Hashicorp Vault'),
     classifiers=(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 2',

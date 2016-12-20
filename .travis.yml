@@ -1,9 +1,6 @@
 language: python
 matrix:
   include:
-    - python: 2.6
-      env:
-      - TOXENV=py26
     - python: 2.7
       env:
       - TOXENV=py27
@@ -16,12 +13,6 @@ matrix:
     - python: 3.5
       env:
       - TOXENV=py35
-    - python: pypy
-      env:
-      - TOXENV=pypy
-    - python: pypy3
-      env:
-      - TOXENV=pypy3
 install:
   - pip install tox coveralls
 script:
@@ -30,10 +21,10 @@ after_success:
   - coveralls
 deploy:
   provider: pypi
-  user: {{ github_user }}
+  user: Rigdon
   distributions: sdist bdist_wheel
   on:
     condition: $TOXENV == py27
     tags: true
     all_branches: true
-    repo: {{ github_user }}/{{ repo_name }}
+    repo: Rigdon/pytenantsecrets

@@ -59,7 +59,7 @@ target/
 venv/
 
 # PyCharm
-.idea
+.idea/
 
 # Python mode for VIM
 .ropeproject

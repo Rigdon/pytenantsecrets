@@ -1,0 +1,19 @@
+version: '2'
+services:
+  tox:
+    build: .
+    volumes:
+      - ".:/src:ro"
+    environment:
+      VAULT_ADDRESS: "http://vault:8200"
+      VAULT_TOKEN: myroot
+    depends_on:
+      - vault
+
+  vault:
+    image: vault
+    cap_add:
+      - IPC_LOCK
+    command: server -dev
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: myroot
